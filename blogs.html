@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs - My Aesthetic Blog</title>
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <style>
+
+        body {
+            font-family: 'Varela Round';
+            margin: 0;
+            padding: 0;
+            background-image: url('back.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        #allBlogsList {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .blog-card {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            width: 300px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>All Blogs</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blogs.html">All Blogs</a></li>
+                <li><a href="add-blog.html">Add a Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>All Blogs</h2>
+        <div id="allBlogsList"></div>
+    </section>
+    <footer>
+        <p>© 2023 My Aesthetic Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to display all blogs
+        function displayAllBlogs() {
+            const allBlogsList = document.getElementById('allBlogsList');
+
+            // Simulated all blogs data
+            const allBlogsData = [
+                { title: 'DEAR BASKETBALL', content: 'By Kobe Bryant' },
+                { title: 'Blog 2', content: 'This is the content of Blog 2.' },
+                { title: 'Blog 3', content: 'This is the content of Blog 3.' },
+                { title: 'Blog 4', content: 'This is the content of Blog 4.' },
+                { title: 'Blog 5', content: 'This is the content of Blog 5.' },
+                { title: 'Blog 6', content: 'This is the content of Blog 6.' },
+                { title: 'Blog 7', content: 'This is the content of Blog 7.' },
+                { title: 'Blog 8', content: 'This is the content of Blog 8.' },
+            ];
+
+            allBlogsData.forEach(blog => {
+                const blogElement = document.createElement('div');
+                blogElement.classList.add('blog-card');
+                blogElement.innerHTML = `<h3>${blog.title}</h3><p>${blog.content}</p>`;
+                allBlogsList.appendChild(blogElement);
+            });
+        }
+
+        // Call the function to display all blogs when the page loads
+        window.onload = displayAllBlogs;
+    </script>
+</body>
+</html>
